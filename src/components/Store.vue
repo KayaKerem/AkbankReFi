@@ -6,25 +6,16 @@
     <div v-else class="row action-panel">
       <div class="container" style="padding-top: 60px">
         <div class="section-title">
-          <h2 style="color: #444444">Ürünlerimiz</h2>
+          <h2 style="color: #444444">Tarımsal Projeler</h2>
         </div>
-        <!-- <span id="urunler">Ürünlerimiz</span> -->
+       
       </div>
 
-      <div class="col-12">
-        <div class="btn-group btn-group-sm pull-right">
-          <button id="list" class="btn btn-outline-dark" @click.prevent="changeDisplay(true)">
-            <i class="fa fa-list" aria-hidden="true"></i>
-          </button>
-          <button id="grid" class="btn btn-outline-dark" @click.prevent="changeDisplay(false)">
-            <i class="fa fa-th" aria-hidden="true"></i>
-          </button>
-        </div>
-      </div>
+     
     </div>
 
     <div class="row" v-if="!isProductLoading" id="products">
-      <app-product-item v-for="prod in products1" :item="prod" :key="prod.id" :displayList="displayList">
+      <app-product-item v-for="prod in products1" :item="prod" :key="prod.id" :displayList="displayList" >
       </app-product-item>
     </div>
     <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50 fixed-bottom">
@@ -90,7 +81,28 @@ export default {
       "quantity": 15,
       "thumbnail_url": "https://cdn1.ntv.com.tr/gorsel/GmgQlcwngEW4nWI_Y6W3lw.jpg?width=952&height=540&mode=both&scale=both",
       "title": "Kütahya"
-    }]
+    }, {
+        "description": "lorem ipsum",
+        "id": 1,
+        "price": 10,
+        "quantity": 15,
+        "thumbnail_url": "https://cdn1.ntv.com.tr/gorsel/GmgQlcwngEW4nWI_Y6W3lw.jpg?width=952&height=540&mode=both&scale=both",
+        "title": "Kütahya"
+      }, {
+        "description": "lorem ipsum",
+        "id": 1,
+        "price": 10,
+        "quantity": 15,
+        "thumbnail_url": "https://cdn1.ntv.com.tr/gorsel/GmgQlcwngEW4nWI_Y6W3lw.jpg?width=952&height=540&mode=both&scale=both",
+        "title": "Kütahya"
+      }, {
+        "description": "lorem ipsum",
+        "id": 1,
+        "price": 10,
+        "quantity": 15,
+        "thumbnail_url": "https://cdn1.ntv.com.tr/gorsel/GmgQlcwngEW4nWI_Y6W3lw.jpg?width=952&height=540&mode=both&scale=both",
+        "title": "Kütahya"
+      }]
     axios.get("http://127.0.0.1:5000/products").then((res) => {
       let dt = res.data["data"];
       this.products1 = dt;

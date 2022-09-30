@@ -1,25 +1,28 @@
 <template>
-  <div class="mb-3 col-sm-6 col-md-6 item" :class="{ 'list-group-item': displayList }">
+  <div class="mb-5 col-sm-6 col-md-6 col-lg-6 item" :class="{ 'list-group-item': displayList }" style="background-color: rgb(249, 249, 249);">
     <div class="thumbnail card">
-      <div class="img-event intrinsic">
+      <div class="img-event intrinsic" style="background-color:rgb(255, 248, 204)">
         <img :src="item.thumbnail_url" alt="" class="grow thumbnail-image card-img-top intrinsic-item p-3" />
       </div>
       <div class="card-body">
         <router-link :to="'/product/' + item.id" tag="h5" class="card-title"><a id="item-title">{{ item.title }}</a>
         </router-link>
         <h6 v-if="item.quantity < 1000 && item.quantity > 0" class="card-subtitle mb-2 remain">
-          Son {{ item.quantity }} paket kaldı!
+           {{ item.quantity }} USDC kaldı!
         </h6>
-
+                  <div class="progress">
+                    <div class="progress-bar bg-warning w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
         <p class="card-text truncate">
           {{ item.description | shortDescription }}
         </p>
 
         <div class="row">
-          <p class="col-6 lead">${{ item.price }}</p>
-          <p class="col-6">
+          <!-- <p class="col-6 lead"> Min {{ item.price }} USDC</p> -->
+          
+          <p class="col">
             <button class="btn btn-success pull-right" :disabled="item.quantity === 0">
-              Sepete Ekle
+              Yatırım Yap
             </button>
           </p>
         </div>
@@ -82,7 +85,7 @@ div.card {
 .list-group-item {
   float: none;
   width: 100%;
-  background-color: #fff;
+  background-color: #F9F9F9;
   margin-bottom: 30px;
   -ms-flex: 0 0 100%;
   flex: 0 0 100%;

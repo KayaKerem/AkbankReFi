@@ -49,7 +49,7 @@ export default {};
 
 <style>
 #body {
-  background-color: #fff8cc;
+  background-color: #fff;
 }
 .loader {
   width: 100px;

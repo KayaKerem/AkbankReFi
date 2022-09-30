@@ -841,7 +841,7 @@ section {
 # Services
 --------------------------------------------------------------*/
 #services {
-  background-color: #fff8cc;
+  background-color: #fff;
 }
 
 .services .icon-box {
@@ -1087,7 +1087,7 @@ section {
 # Testimonials
 --------------------------------------------------------------*/
 .testimonials {
-  background-color: #fff8cc;
+  background-color: #fff;
 }
 
 .testimonials .testimonial-item {
@@ -1097,7 +1097,7 @@ section {
   text-align: center;
   min-height: 350px;
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
-  background: #fff8cc;
+  background: #fff;
 }
 
 .testimonials .testimonial-item .testimonial-img {
