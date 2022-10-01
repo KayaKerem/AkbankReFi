@@ -25,8 +25,8 @@
           <div class="col-lg-3 col-md-6">
             <div class="icon-box">
               <div class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                  class="bi bi-tree-fill" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#077437" class="bi bi-tree-fill"
+                  viewBox="0 0 16 16">
                   <path
                     d="M8.416.223a.5.5 0 0 0-.832 0l-3 4.5A.5.5 0 0 0 5 5.5h.098L3.076 8.735A.5.5 0 0 0 3.5 9.5h.191l-1.638 3.276a.5.5 0 0 0 .447.724H7V16h2v-2.5h4.5a.5.5 0 0 0 .447-.724L12.31 9.5h.191a.5.5 0 0 0 .424-.765L10.902 5.5H11a.5.5 0 0 0 .416-.777l-3-4.5z" />
                 </svg>
@@ -42,7 +42,7 @@
           <div class="col-lg-3 col-md-6">
             <div class="icon-box">
               <div class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#077437"
                   class="bi bi-bar-chart-line-fill" viewBox="0 0 16 16">
                   <path
                     d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2z" />
@@ -59,7 +59,7 @@
           <div class="col-lg-3 col-md-6">
             <div class="icon-box">
               <div class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#077437"
                   class="bi bi-keyboard-fill" viewBox="0 0 16 16">
                   <path
                     d="M0 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6zm13 .25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25zM2.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 3 8.75v-.5A.25.25 0 0 0 2.75 8h-.5zM4 8.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 5 8.75v-.5A.25.25 0 0 0 4.75 8h-.5a.25.25 0 0 0-.25.25zM6.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 7 8.75v-.5A.25.25 0 0 0 6.75 8h-.5zM8 8.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 9 8.75v-.5A.25.25 0 0 0 8.75 8h-.5a.25.25 0 0 0-.25.25zM13.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zm0 2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zm-3-2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h1.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-1.5zm.75 2.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25zM11.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zM9 6.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5A.25.25 0 0 0 9.75 6h-.5a.25.25 0 0 0-.25.25zM7.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 8 6.75v-.5A.25.25 0 0 0 7.75 6h-.5zM5 6.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 6 6.75v-.5A.25.25 0 0 0 5.75 6h-.5a.25.25 0 0 0-.25.25zM2.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h1.5A.25.25 0 0 0 4 6.75v-.5A.25.25 0 0 0 3.75 6h-1.5zM2 10.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25zM4.25 10a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h5.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-5.5z" />
@@ -76,7 +76,7 @@
           <div class="col-lg-3 col-md-6">
             <div class="icon-box">
               <div class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-headset"
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#077437" class="bi bi-headset"
                   viewBox="0 0 16 16">
                   <path
                     d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5z" />
@@ -171,10 +171,11 @@
               </svg>
 
               <!-- <font-awesome-icon icon="fa-solid fa-recycle" class="bi" /> -->
-              <h4><a href="#">Geri Dönüşüm</a></h4>
+              <h4><a href="#">Bilinçli tarım</a></h4>
               <p>
-                Sıfır atık politikasını benimsediğimiz şirketimizde
-                kullanılmış kağıtları getirdiğinizde indirimlerimiz sayesinde doğamızı hep beraber koruyoruz. </p>
+                Minimum miktarda kaynak kullanarak maksimum verim almak ve bunun sonucunda da uygun fiyatlı ürün
+                çıkması.
+              </p>
             </div>
           </div>
           <div class="col-md-6 mt-4 mt-lg-0">
@@ -185,10 +186,11 @@
                 <path
                   d="M15.985 8.5H8.207l-5.5 5.5a8 8 0 0 0 13.277-5.5zM2 13.292A8 8 0 0 1 7.5.015v7.778l-5.5 5.5zM8.5.015V7.5h7.485A8.001 8.001 0 0 0 8.5.015z" />
               </svg>
-              <h4><a href="#">Müşteri Arayüzü</a></h4>
+              <h4><a href="#">Açlık Krizi</a></h4>
               <p>
-                Size özel hazırladığımız kullanıcı arayüzümüz ile planlamalarınızı daha emin adımlarla daha kolay
-                yapabileceksiniz. </p>
+                Geleceğin en büyük sorunlarından açlık problemine de çözüm oluşturarak, elimizdeki kaynakları gelecek
+                nesillere aktarabilmek.
+              </p>
             </div>
           </div>
           <div class="col-md-6 mt-4 mt-lg-0">
@@ -199,10 +201,10 @@
                 <path
                   d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
               </svg>
-              <h4><a href="#">Hızlı Teslim</a></h4>
+              <h4><a href="#">İthalat Azalması</a></h4>
               <p>
-                Sizler için özenle hazırladığımız siparişlerinizi en geç 3 iş günü içinde
-                kargoya vererek beklemeden güvenle alışveriş imkanı sunuyoruz.
+                Ülke içinde tarımı destekleyerek ithalat eden ürünlerin azalması. Bundan dolayı ithal edilirken yaşanan
+                ürün kaybı ve karbon salınımının azalması.
               </p>
             </div>
           </div>
@@ -214,95 +216,17 @@
                 <path
                   d="M4 6a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm2.625.547a3 3 0 0 0-5.584.953H.5a.5.5 0 0 0 0 1h.541A3 3 0 0 0 7 8a1 1 0 0 1 2 0 3 3 0 0 0 5.959.5h.541a.5.5 0 0 0 0-1h-.541a3 3 0 0 0-5.584-.953A1.993 1.993 0 0 0 8 6c-.532 0-1.016.208-1.375.547zM14 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
               </svg>
-              <h4><a href="#">Kolay Takip</a></h4>
+              <h4><a href="#">İş İmkanı</a></h4>
               <p>
-                Siparişinizi yedi yirmi dört takip edebileceğiniz, nerede kaldı derdine son verecek sipariş takip
-                sistemimizle artık online alışveriş daha kolay. </p>
+                Kırsal kesimde istihdam yaratarak köyden şehire göçe azaltmak.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
     <!-- End Services Section -->
-    <section id="testimonials" class="testimonials section-bg">
-      <div class="container">
-        <div class="section-title">
-          <h2>Takımımız</h2>
-          <p>
-            <i>
-              “Talent wins games, but teamwork and intelligence win
-              championships”
-            </i>
-            -Michael Jordan
-          </p>
-        </div>
 
-        <div class="row">
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="testimonial-item">
-
-                </div>
-
-              </div>
-              <div class="carousel-item">
-                <div class="testimonial-item">
-
-                </div>
-                <!-- <img
-                  class="d-block w-100 img-fluid"
-                  src="https://placeimg.com/1080/500/arch"
-                  alt="Second slide"
-                /> -->
-              </div>
-
-              <div class="carousel-item">
-                <div class="testimonial-item">
-                  <!-- <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Bir veritabanı uzmanının bilmesi gereken birçok şeyi bu projede öğrendim. Daha verimli bir süreç
-                    olamazdı.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  </p>
-                  <img src="../assets/img/berkay.jpeg" class="testimonial-img" alt="" />
-                  <h3>asdas</h3>
-                  <h4>Veri Tabanı Uzmanı &amp; Back-End Geliştirici</h4> -->
-                </div>
-
-              </div>
-
-              <div class="carousel-item">
-                <div class="testimonial-item">
-
-
-                </div>
-              </div>
-
-              <div class="carousel-item">
-                <div class="testimonial-item">
-
-
-                </div>
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
     <!-- End Testimonials Section -->
 
     <!------->
@@ -515,12 +439,15 @@ h6 {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
-  width: 100%;
+  width: auto;
   height: 60vh;
-  background: url("../assets/img/hero-bg.jpg") center center;
+  background: url("../assets/img/welcome.png") center center;
   background-size: cover;
   position: relative;
-  margin-top: 0px;
+  margin-top: 70px;
+  margin-right: 80px;
+  margin-left: 80px;
+  justify-content: center;
   padding: 0;
 }
 
@@ -566,12 +493,12 @@ h6 {
   border-radius: 4px;
   transition: ease-in-out 0.3s;
   color: #fff;
-  background: #091239db;
+  background: #077437;
   text-transform: uppercase;
 }
 
 #hero .btn-get-started:hover {
-  background: #25386d;
+  background: #0a9145;
 }
 
 @media (max-width: 992px) {
@@ -601,7 +528,7 @@ section {
 }
 
 .section-bg {
-  background-color: #f7fbfe;
+  background-color: #f9f9f9;
 }
 
 .section-title {
@@ -634,7 +561,7 @@ section {
   display: block;
   width: 40px;
   height: 3px;
-  background: #efb631;
+  background: #077437;
   bottom: 0;
   left: calc(50% - 20px);
 }
@@ -651,7 +578,7 @@ section {
   text-align: center;
   padding: 30px 20px;
   transition: all ease-in-out 0.3s;
-  background: #fff;
+  background: #f9f9f9;
 }
 
 .what-we-do .icon-box .icon {
@@ -696,7 +623,7 @@ section {
 
 .what-we-do .icon-box:hover h4 a,
 .what-we-do .icon-box:hover .icon i {
-  color: #efb631;
+  color: #0a9145;
 }
 
 /*--------------------------------------------------------------
@@ -853,7 +780,7 @@ section {
 
 .services .icon-box .bi {
   float: left;
-  color: #efb631;
+  color: #077437;
   font-size: 40px;
   line-height: 0;
 }
@@ -881,7 +808,7 @@ section {
 }
 
 .services .icon-box:hover h4 a {
-  color: #efb631;
+  color: #0a9145;
 }
 
 /*--------------------------------------------------------------

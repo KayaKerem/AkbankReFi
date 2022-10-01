@@ -1,4 +1,5 @@
 {
+
     "name": "vuejs-shopping-card-cli3",
     "version": "0.1.0",
     "private": true,
@@ -58,3 +59,4 @@
         "last 2 versions"
     ]
 }
+
