@@ -2,8 +2,8 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3" role="navigation">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
-      <router-link to="/" class="navbar-brand mr-auto " style="font-size:1.75rem;font-weight:700;">TRM
-        
+      <router-link to="/" class="navbar-brand mr-auto " style="font-size:1.75rem;font-weight:700;">ReFarm
+
         <!-- <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-infinity"
           viewBox="0 0 16 16">
           <path
@@ -26,15 +26,15 @@
             </router-link>
           </li>
 
-          
+
 
           <li>
             <router-link id="orderbutton" to="/order" class="btn btn-dark navbar-btn" tag="button">
               Whitepaper
             </router-link>
           </li>
-          
-          
+
+
 
 
           <li>
@@ -98,7 +98,7 @@ export default {
       registeredList: null,
       isConnected: false,
       currentAccount: "",
-      
+
 
 
     };
@@ -212,11 +212,11 @@ export default {
 .btn-light {
   color: #fff;
   background-color: #fff;
-  border-color: #091239;
+  border-color: #094636;
 }
 
 .navbar {
-  background-color: #077437 !important;
+  background-color: #00B786 !important;
 }
 
 #sepettitle {
@@ -228,8 +228,8 @@ export default {
 }
 
 #orderbutton {
-  background-color: #077437 !important;
-  border-color: #077437;
+  background-color: #00B786 !important;
+  border-color: #00B786;
 }
 
 #orderbutton:hover {
@@ -238,8 +238,8 @@ export default {
 }
 
 #productbutton {
-  background-color: #077437 !important;
-  border-color: #077437;
+  background-color: #00B786 !important;
+  border-color: #00B786;
 }
 
 #productbutton:hover {

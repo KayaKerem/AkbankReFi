@@ -26,9 +26,9 @@
 
         "@vue/composition-api": "^1.4.9",
 
-        "axios": "^0.26.1",
         "avalanche": "^3.15.4",
 
+        "axios": "^0.26.1",
 
         "bootstrap": "^4.3.1",
 
@@ -121,3 +121,4 @@
     ]
 
 }
+
