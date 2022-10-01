@@ -186,6 +186,10 @@ export default {
   color: white;
 }
 
+.container {
+  padding-right: 68px;
+}
+
 .li-pointer {
   cursor: pointer;
 }
@@ -201,7 +205,7 @@ export default {
 }
 
 .navbar {
-  background-color: #091239 !important;
+  background-color: #077437 !important;
 }
 
 #sepettitle {
@@ -213,8 +217,8 @@ export default {
 }
 
 #orderbutton {
-  background-color: #091239 !important;
-  border-color: #091239;
+  background-color: #077437 !important;
+  border-color: #077437;
 }
 
 #orderbutton:hover {
@@ -223,8 +227,8 @@ export default {
 }
 
 #productbutton {
-  background-color: #091239 !important;
-  border-color: #091239;
+  background-color: #077437 !important;
+  border-color: #077437;
 }
 
 #productbutton:hover {
