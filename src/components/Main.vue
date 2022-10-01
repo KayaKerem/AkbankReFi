@@ -360,12 +360,12 @@ c91 -4 204 3 230 15 1 0 2 -42 2 -94z m-485 -246 c8 -39 54 -231 101 -427 46
     <!-- End What We Do Section -->
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
-      <div class="container">
+      <div class="container" style="margin-right:160px;margin-left:160px">
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-lg-6 " style="padding-top: 60px;">
             <img src="../assets/img/smart-farm.jpg" class="img-fluid" alt="" />
           </div>
-          <div class="col-lg-6 pt-4 pt-lg-0" style="background-color:#00B786;border-radius:5px;">
+          <div class="col-lg-6 pt-4 pt-lg-0" style="padding-left:100px;padding-top:20px">
             <h3 style="color:#fff">Hakkımızda</h3>
             <p style="font-size:1.25rem;font-weight:550;color:#fff">
               Dünya'da tarımsal üretim sürekli artmasına rağmen, mevcut talebi
@@ -1066,7 +1066,13 @@ section {
 --------------------------------------------------------------*/
 .about {
   padding: 10px 0;
+  background-color: #00B786;
+  border-radius: 10px;
+  margin-right: 80px;
+  margin-left: 80px;
+  padding-top: 20px;
 }
+
 
 .about h3 {
   font-weight: 600;
