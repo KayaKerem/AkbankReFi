@@ -216,7 +216,7 @@ export default {
 }
 
 .navbar {
-  background-color: #00B786 !important;
+  background-color: #066b50 !important;
 }
 
 #sepettitle {
@@ -228,8 +228,8 @@ export default {
 }
 
 #orderbutton {
-  background-color: #00B786 !important;
-  border-color: #00B786;
+  background-color: #066b50 !important;
+  border-color: #066b50;
 }
 
 #orderbutton:hover {
@@ -238,8 +238,8 @@ export default {
 }
 
 #productbutton {
-  background-color: #00B786 !important;
-  border-color: #00B786;
+  background-color: #066b50 !important;
+  border-color: #066b50;
 }
 
 #productbutton:hover {

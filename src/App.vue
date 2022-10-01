@@ -71,6 +71,6 @@ footer a:hover {
 }
 
 #sticky-footer {
-  background-color: #00B786 !important;
+  background-color: #066b50 !important;
 }
 </style>
