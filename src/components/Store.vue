@@ -4,9 +4,9 @@
       <grid-loader></grid-loader>
     </div>
     <div v-else class="row action-panel">
-      <div class="container" style="padding-top: 60px">
+      <div class="container" style="padding-top: 100px">
         <div class="section-title">
-          <h2 style="color: #444444">Tarımsal Projeler</h2>
+          <h2 style="color: #444444">Tarım Projeleri</h2>
         </div>
       </div>
     </div>
@@ -49,10 +49,11 @@
 <script>
 import ProductItem from "./product/ProductItem.vue";
  import GridLoader from "vue-spinner/src/GridLoader.vue";
-import { ethers } from "ethers";
+import {listenToProductList} from "./utils/datas.js"
 import abi from "./utils/refarm.json";
 import Refarm from "./utils/refarm.json";
-import Swal from "sweetalert2";
+
+
 
 
 const contractAddress = "0x997111AFaf3b305caE45aab4c5ca9205790B6881";
@@ -62,32 +63,7 @@ console.log(contractAddress);
 console.log(contractABI);
 console.log(Refarm);
 
-const AVALANCHE_MAINNET_PARAMS = {
-  chainId: '0xA86A',
-  chainName: 'Avalanche Mainnet C-Chain',
-  nativeCurrency: {
-    name: 'Avalanche',
-    symbol: 'AVAX',
-    decimals: 18
-  },
-  rpcUrls: ['https://api.avax.network/ext/bc/C/rpc'],
-  blockExplorerUrls: ['https://snowtrace.io/']
-}
-console.log(AVALANCHE_MAINNET_PARAMS)
-const AVALANCHE_TESTNET_PARAMS = {
-  chainId: '43113',
-  chainName: 'Avalanche FUJI C-Chain',
-  nativeCurrency: {
-    name: 'Avalanche',
-    symbol: 'AVAX',
-    decimals: 18
-  },
-  rpcUrls: ['https://api.avax-test.network/ext/bc/C/rpc'],
-  blockExplorerUrls: ['https://testnet.snowtrace.io/']
-}
-console.log(AVALANCHE_TESTNET_PARAMS)
-const AVALANCHE_NETWORK_PARAMS = AVALANCHE_TESTNET_PARAMS
-console.log(AVALANCHE_NETWORK_PARAMS)
+
 export default {
   data() {
     return {
@@ -98,11 +74,11 @@ export default {
       isProductLoading: true,
     };
   },
-  created() {
-     this.getFields()
+  async created() {
+    await listenToProductList()
   },
   computed: {
-    // ...mapGetters(["products", "isProductLoading"]),
+    
   },
   components: {
     appProductItem: ProductItem,
@@ -111,42 +87,11 @@ export default {
   },
   mounted() {
  
-    
   },
   methods: {
-    changeDisplay(isList) {
-      this.displayList = isList;
-    },
-    getFields: async function () {
-      try {
-        const { ethereum } = window;
-        if (ethereum) {
-          const provider = new ethers.providers.Web3Provider(ethereum, "any");
-          const signer = provider.getSigner();
-          const Refarm = new ethers.Contract(
-            contractAddress,
-            contractABI,
-            signer
-          );
-          console.log("transaction happening...");
-          const fields = await Refarm.getAllFields();
-          const hexToDecimal = hex => parseInt(hex, 16);
-          for (let i in fields) {
-            this.products1.push({ "id": hexToDecimal(fields[i][0]["_hex"]), "title": fields[i][1], "description": "Lorem ipsum dolor sit amet", "limit": hexToDecimal(fields[i][4]["_hex"]), "quantity": hexToDecimal(fields[i][3]["_hex"]), "thumbnail_url": "https://cdn1.ntv.com.tr/gorsel/GmgQlcwngEW4nWI_Y6W3lw.jpg?width=952&height=540&mode=both&scale=both" });
-          }
-
-      
-          this.isProductLoading=false;
-        }
-      } catch (error) {
-        this.transactionError = true;
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: error,
-        });
-      }
-    },
+   
+   
+  
   },
 };
 </script>
