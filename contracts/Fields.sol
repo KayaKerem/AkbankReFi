@@ -16,11 +16,13 @@ interface USDC {
 contract Fields {
 
 
-    USDC public USDc;
 
     struct Field{
         uint256 id;
         string name;
+        address owner;
+        uint256 containsMoney;
+        uint256 limitOfInvest;
     }
 
 
@@ -46,56 +48,105 @@ contract Fields {
         uint256 amountOfMoney
     );
 
+    USDC public USDc;
 
-
-
-    uint256 public fieldId = 1;
-    uint256 public defaultMaxMoney = 500000;
-    mapping(uint256 => string) fields;//Tarla id --> tarla ismi
-    mapping(uint256 => address) farmers;//tarla id --> çiftçi adresi
-    mapping(uint256 => uint256) TotalMoneyOfFields;//Tarla id --> Toplanan para
+    Field [] allFields;
+    uint256 public fieldId = 5;
+    uint256 public defaultMaxMoney = 5000;
     mapping(uint256 => mapping(address => uint256)) balancesOfInvestedMoney;//Tarla id -> (Yatırımcı adresi --> yatırımcının ne kadar yatırdığı)
-
+    mapping(uint256 =>uint256) bounties;//tarla id -> hasılat sontası geri ödenen toplam para
+    function setDefaultFarms()public{
+        allFields.push(
+            Field(
+                1,
+                "Konya Bugday Tarlasi",
+                0xA02D09d454861A0ccd2e8518886cDcEC37ecDd2c,
+                0,
+                defaultMaxMoney
+            )
+        );
+        allFields.push(
+            Field(
+                2,
+                "Ordu Findik Tarlasi",
+                0xA02D09d454861A0ccd2e8518886cDcEC37ecDd2c,
+                0,
+                defaultMaxMoney
+            )
+        );
+        allFields.push(
+            Field(
+                3,
+                "Isparta Gul Tarlasi",
+                0xA02D09d454861A0ccd2e8518886cDcEC37ecDd2c,
+                0,
+                defaultMaxMoney
+            )
+        );
+        allFields.push(
+            Field(
+                4,
+                "Rize Cay Tarlasi",
+                0xA02D09d454861A0ccd2e8518886cDcEC37ecDd2c,
+                0,
+                defaultMaxMoney
+            )
+        );
+    }
     constructor(){
-        USDc = USDC(0x1Ad483798422423E3471d2fa8a7eF6EB83BD4926);//USDC Avalanche ağına ait smart contract adresi
-        //0x1Ad483798422423E3471d2fa8a7eF6EB83BD4926 //Tesnet
+        USDc = USDC(0x5425890298aed601595a70AB815c96711a31Bc65);//USDC Avalanche  Fuji Testnet ağına ait smart contract adresi
+        //0x5425890298aed601595a70AB815c96711a31Bc65 //Tesnet
+        setDefaultFarms();
     }               
 
-
-    function getFarmer(uint256 Id)public view returns(address){ //Çiftçi adresi döner
-        return farmers[Id];
-    }
-    function getTotalLockedMoney(uint256 Id)public view returns(uint256){//Tarlada şuana kadar toplanan toplam parayı döner 
-        return TotalMoneyOfFields[Id];
-    }
-    function getAddressOfInvestedMoney(uint256 Id) public view returns(uint256){//Çağıran kişinin tarla id si verilen tarlaya yaptığı yatırım miktarı
-        return balancesOfInvestedMoney[Id][msg.sender];
-    }
-    function getFieldName(uint256 Id)public view returns(string memory){//Tarla ismi döner
-        return fields[Id];
-    }
-
-
     function beFarmer(string memory name) public {//Çiftçi olmak için çağırılır
-        fields[fieldId] = name;
-        farmers[fieldId] = msg.sender;
+        allFields.push(
+            Field(
+                fieldId,
+                name,
+                msg.sender,
+                0,
+                defaultMaxMoney
+            )
+        );
         fieldId +=1;
     }
 
+    function getAddressOfInvestedMoney(uint256 Id) public view returns(uint256){//Çağıran kişinin tarla id si verilen tarlaya yaptığı yatırım miktarı
+        return balancesOfInvestedMoney[Id][msg.sender];
+    }
+
+    function getField(uint256 _id)public view returns(Field memory){
+        for(uint256 i = 0; i < allFields.length;i++){
+            if(allFields[i].id == _id){
+                return allFields[i];
+            }
+        }
+        return Field(
+            0,
+            "",
+            0x0000000000000000000000000000000000000000,
+            0,
+            0
+        );
+    }
+    function getAllFields()public view returns(Field [] memory){
+        return allFields;
+    }
+
+
+
     function lockMoney(uint256 Id,uint256 $USDC) public{ //Tarlaya para gönderilir yatırımcı tarafından
             require($USDC <= msg.sender.balance,"You don't have enough money");
-            require(($USDC + getTotalLockedMoney(Id)) <= defaultMaxMoney,"You don't invest that much money");
+            require(($USDC + getField(Id).containsMoney) <= getField(Id).limitOfInvest,"You don't invest that much money");
 
             balancesOfInvestedMoney[Id][msg.sender] += $USDC;
-            TotalMoneyOfFields[Id]+= $USDC;
+            getField(Id).containsMoney += $USDC;
             USDc.transferFrom(msg.sender, address(this), $USDC * 10 ** 6);
             emit Invest(
                 msg.sender,
                 block.timestamp,
-                Field(
-                    Id,
-                    fields[Id]
-                ),
+                getField(Id),
                 $USDC
             );
     } 
@@ -105,14 +156,11 @@ contract Fields {
     function runField(uint256 Id) public {
 
         
-        USDc.transfer(getFarmer(Id), defaultMaxMoney);
+        USDc.transfer(getField(Id).owner, getField(Id).limitOfInvest);
         emit RunField(
-                getFarmer(Id),
+                getField(Id).owner,
                 block.timestamp,
-                Field(
-                    Id,
-                    fields[Id]
-                ),
+                getField(Id),
                 defaultMaxMoney
         );
     }
@@ -120,17 +168,16 @@ contract Fields {
 
     //Çiftçi hasılatı aldıktan sonra kazandığı paranın belli bir miktarını kontrata geri döner
     //Tüm ödüller kontratta toplanır
-    function getBountiesToContract(uint256 Id) public{
+    function getBountiesToContract(uint256 Id,uint256 $USDC) public{
 
+        getField(Id).containsMoney = 0;
+        bounties[Id] = $USDC;
+        USDc.transfer(getField(Id).owner, $USDC);
 
-        USDc.transfer(getFarmer(Id), USDc.balanceOf(address(this)));
         emit Bounty(
-                getFarmer(Id),
+                getField(Id).owner,
                 block.timestamp,
-                Field(
-                    Id,
-                    fields[Id]
-                ),
+                getField(Id),
                 defaultMaxMoney
         );
     }
@@ -138,7 +185,7 @@ contract Fields {
     //Withdraw tuşuna basan yatırımcılar yatırımları gereği belli oranlarda paraları geri cüzdanına çeker
     function withdrawBounty(uint256 Id) public{
         require(balancesOfInvestedMoney[Id][msg.sender] > 0,"You did not invest any money to this farm");
-        USDc.transfer(getFarmer(Id), (USDc.balanceOf(address(this)) * balancesOfInvestedMoney[Id][msg.sender] ) / defaultMaxMoney);
+        USDc.transfer(getField(Id).owner, (bounties[Id] * balancesOfInvestedMoney[Id][msg.sender] ) / defaultMaxMoney);
         balancesOfInvestedMoney[Id][msg.sender] = 0;
     }
 
