@@ -10,9 +10,14 @@
         <h6 v-if="item.quantity < 1000 && item.quantity > 0" class="card-subtitle mb-2 remain">
            {{ item.quantity }} USDC kaldı!
         </h6>
-                  <div class="progress">
-                    <div class="progress-bar bg-warning w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
+          <div class="progress">
+            <div class="progress-bar bg-warning" role="progressbar"          
+            v-bind:style="{ width: (item.quantity)  + '%'}"
+            v-bind:aria-valuenow="item.quantity"
+            aria-valuemin="0"
+            aria-valuemax="100"
+>{{item.quantity}} USDC</div>
+          </div>
         <p class="card-text truncate">
           {{ item.description | shortDescription }}
         </p>
@@ -21,8 +26,8 @@
           <!-- <p class="col-6 lead"> Min {{ item.price }} USDC</p> -->
           
           <p class="col">
-            <button class="btn btn-success pull-right" :disabled="item.quantity === 0">
-              Yatırım Yap
+            <button class="btn btn-success pull-right" :disabled="item.quantity === 0" @click="this.invest">
+              Katıl
             </button>
           </p>
         </div>
@@ -33,10 +38,54 @@
 
 <script>
 import { mapActions } from "vuex";
+import Swal from 'sweetalert2'
 export default {
   props: ["item", "displayList"],
+  data() {
+    return { 
+    progress:100  
+    }
+  },
   methods: {
     ...mapActions(["addMessage"]),
+    invest() {
+     
+      Swal.fire({
+        title: 'Yatırım yapacağınız miktarı belirleyin',
+        input: 'range',
+        inputLabel: 'USDC ',
+        inputAttributes: {
+          min: 10,
+          max: 100,
+          step: 1
+        },
+        inputValue: 25,
+        confirmButtonText: 'Onayla',
+        showLoaderOnConfirm: true,
+        preConfirm: (login) => {
+          return fetch(`//api.github.com/users/${login}`)
+            .then(response => {
+              if (!response.ok) {
+                throw new Error(response.statusText)
+              }
+              return response.json()
+            })
+            .catch(error => {
+              Swal.showValidationMessage(
+                `Request failed: ${error}`
+              )
+            })
+        },
+        allowOutsideClick: () => !Swal.isLoading()
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: `${result.value.login}'s avatar`,
+            imageUrl: result.value.avatar_url
+          })
+        }
+      })
+    }
 
   },
   filters: {
