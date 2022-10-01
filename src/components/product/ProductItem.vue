@@ -26,10 +26,16 @@
         <div class="row">
           <!-- <p class="col-6 lead"> Min {{ item.price }} USDC</p> -->
 
-          <p class="col">
-            <button class="btn btn-success pull-right" :disabled="item.quantity === 0" @click="this.invest">
+          <p class="col" v-if="item.quantity<item.limit">
+            <button class="btn btn-success pull-right"  @click="this.invest">
               Katıl
             </button>
+          </p>
+          <p class="col" v-else>
+            <button class="btn btn-success pull-right" disabled @click="this.invest">
+            Hedefe Ulaşıldı
+            </button>
+              
           </p>
         </div>
       </div>
