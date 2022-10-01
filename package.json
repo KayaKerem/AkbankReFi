@@ -26,13 +26,17 @@
 
         "@vue/composition-api": "^1.4.9",
 
+        "avalanche": "^3.15.4",
+
         "axios": "^0.26.1",
 
         "bootstrap": "^4.3.1",
 
         "core-js": "^3.6.5",
 
-        "sweetalert2": "^11.4.35",
+        "ethers": "^5.7.1",
+
+        "sweetalert2": "^11.4.36",
 
         "swiper": "^8.0.7",
 
@@ -42,7 +46,9 @@
 
         "vue-spinner": "^1.0.3",
 
-        "vuex": "^3.1.0"
+        "vuex": "^3.1.0",
+
+        "yarn": "^1.22.19"
 
     },
 

@@ -39,19 +39,97 @@
 
 <script>
 import { mapActions } from "vuex";
-import Swal from 'sweetalert2'
+import { ethers } from "ethers";
+import abi from "../utils/refarm.json";
+import Refarm from "../utils/refarm.json";
+import Swal from "sweetalert2";
+
+
+
+const contractAddress = "0x19380F1C607cfA68432d7205d2f2f1C2FB4d833e";
+const contractABI = abi.abi;
+
+console.log(contractAddress);
+console.log(contractABI);
+console.log(Refarm);
+
+const AVALANCHE_MAINNET_PARAMS = {
+  chainId: '0xA86A',
+  chainName: 'Avalanche Mainnet C-Chain',
+  nativeCurrency: {
+    name: 'Avalanche',
+    symbol: 'AVAX',
+    decimals: 18
+  },
+  rpcUrls: ['https://api.avax.network/ext/bc/C/rpc'],
+  blockExplorerUrls: ['https://snowtrace.io/']
+}
+console.log(AVALANCHE_MAINNET_PARAMS)
+const AVALANCHE_TESTNET_PARAMS = {
+  chainId: '43113',
+  chainName: 'Avalanche FUJI C-Chain',
+  nativeCurrency: {
+    name: 'Avalanche',
+    symbol: 'AVAX',
+    decimals: 18
+  },
+  rpcUrls: ['https://api.avax-test.network/ext/bc/C/rpc'],
+  blockExplorerUrls: ['https://testnet.snowtrace.io/']
+}
+console.log(AVALANCHE_TESTNET_PARAMS)
+const AVALANCHE_NETWORK_PARAMS = AVALANCHE_TESTNET_PARAMS
+console.log(AVALANCHE_NETWORK_PARAMS)
 export default {
   props: ["item", "displayList"],
   data() {
     return {
-      progress: 100
+      inputValue:null,
+      progress: 100,
+      currentContract: null,
+      contractAddress: "0xF327DDC516d5eFe3073B46b59dB50CcE94711c70",
     }
   },
   methods: {
     ...mapActions(["addMessage"]),
-    invest() {
+    lockMoney: async function (id,credit) {
+        try {
+          const { ethereum } = window;
+          if (ethereum) {
+            const provider = new ethers.providers.Web3Provider(ethereum, "any");
+            const signer = provider.getSigner();
+            const Refarm = new ethers.Contract(
+              contractAddress,
+              contractABI,
+              signer
+            );
+            console.log("transaction happening...");
+            const refarmtxn = await Refarm.lockMoney(
+              id,
+              credit
 
-      Swal.fire({
+            );
+            console.log(refarmtxn);
+            await refarmtxn.wa
+            // alert("mined ", refarmtxn.hash);
+            // console.log("data transaction happend!");
+            Swal.fire({
+              icon: "success",
+              title: "Success",
+              text: refarmtxn.hash,
+            });
+          }
+        } catch (error) {
+          this.transactionError = true;
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: error,
+          });
+        }
+      },
+    invest: async function () {
+      
+      await Swal.fire({
         title: 'Yatırım yapacağınız miktarı belirleyin',
         input: 'range',
         inputLabel: 'USDC ',
@@ -63,29 +141,15 @@ export default {
         inputValue: 25,
         confirmButtonText: 'Onayla',
         showLoaderOnConfirm: true,
-        preConfirm: (login) => {
-          return fetch(`//api.github.com/users/${login}`)
-            .then(response => {
-              if (!response.ok) {
-                throw new Error(response.statusText)
-              }
-              return response.json()
-            })
-            .catch(error => {
-              Swal.showValidationMessage(
-                `Request failed: ${error}`
-              )
-            })
+        preConfirm: (inputValue) => {
+          this.inputValue = inputValue
+          this.lockMoney(this.item.id, inputValue);
         },
         allowOutsideClick: () => !Swal.isLoading()
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire({
-            title: `${result.value.login}'s avatar`,
-            imageUrl: result.value.avatar_url
-          })
-        }
+      }).then(() => {
+        
       })
+      
     }
 
   },

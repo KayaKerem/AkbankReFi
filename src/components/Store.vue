@@ -95,7 +95,7 @@ export default {
       },
       {
         description: "lorem ipsum",
-        id: 1,
+        id: 15,
         price: 10,
         limit: 100,
         quantity: 15,
@@ -105,7 +105,7 @@ export default {
       },
       {
         description: "lorem ipsum",
-        id: 1,
+        id: 14,
         price: 10,
         limit: 100,
         quantity: 15,

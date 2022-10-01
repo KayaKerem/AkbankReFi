@@ -26,11 +26,15 @@
             </router-link>
           </li>
 
+          
+
           <li>
             <router-link id="orderbutton" to="/order" class="btn btn-dark navbar-btn" tag="button">
               Whitepaper
             </router-link>
           </li>
+          
+          
 
 
           <li>
@@ -81,6 +85,8 @@
 <script>
 // import axios from "axios";
 import { mapActions } from "vuex";
+// import { ethers } from "ethers";
+
 
 export default {
   data() {
@@ -88,11 +94,11 @@ export default {
       isNavOpen: false,
       isLoggedIn: false,
 
-      router_link: "/login",
       transactionError: false,
       registeredList: null,
       isConnected: false,
       currentAccount: "",
+      
 
 
     };
@@ -102,7 +108,7 @@ export default {
   },
   mounted() {
     this.checkConnectedWalletExist();
-    window.ethereum.on('accountsChanged', accounts => this.setState({ accounts }))
+    window.ethereum.on('accountsChanged', () => { this.currentAccount = null })
 
     // Reload the site if the user selects a different chain
     window.ethereum.on('chainChanged', () => window.location.reload())
@@ -179,10 +185,9 @@ export default {
       };
 
       this.addMessage(message_obj);
-    }
+    },
 
-
-  },
+  }
 };
 </script>
 
