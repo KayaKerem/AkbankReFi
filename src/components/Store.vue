@@ -1,7 +1,7 @@
 <template>
   <div class="container" :class="{ loadingItem: isProductLoading }">
     <div class="row text-center" v-if="isProductLoading">
-      <loader></loader>
+      <grid-loader></grid-loader>
     </div>
     <div v-else class="row action-panel">
       <div class="container" style="padding-top: 60px">
@@ -47,15 +47,12 @@
 </template>
 
 <script>
-// import { mapGetters } from "vuex";
 import ProductItem from "./product/ProductItem.vue";
-// import GridLoader from "vue-spinner/src/GridLoader.vue";
-import Loader from "./Loader.vue";
+ import GridLoader from "vue-spinner/src/GridLoader.vue";
 import { ethers } from "ethers";
 import abi from "./utils/refarm.json";
 import Refarm from "./utils/refarm.json";
 import Swal from "sweetalert2";
-
 
 
 const contractAddress = "0x997111AFaf3b305caE45aab4c5ca9205790B6881";
@@ -109,8 +106,8 @@ export default {
   },
   components: {
     appProductItem: ProductItem,
-    Loader,
-    // GridLoader,
+   
+ GridLoader,
   },
   mounted() {
  
@@ -138,11 +135,7 @@ export default {
             this.products1.push({ "id": hexToDecimal(fields[i][0]["_hex"]), "title": fields[i][1], "description": "Lorem ipsum dolor sit amet", "limit": hexToDecimal(fields[i][4]["_hex"]), "quantity": hexToDecimal(fields[i][3]["_hex"]), "thumbnail_url": "https://cdn1.ntv.com.tr/gorsel/GmgQlcwngEW4nWI_Y6W3lw.jpg?width=952&height=540&mode=both&scale=both" });
           }
 
-          Swal.fire({
-            icon: "success",
-            title: "Success",
-            text: fields ,
-          });
+      
           this.isProductLoading=false;
         }
       } catch (error) {

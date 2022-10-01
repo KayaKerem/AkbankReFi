@@ -108,7 +108,7 @@ export default {
               contractABI,
               signer
             );
-            console.log("transaction happening...");
+           
             const refarmtxn = await Refarm.lockMoney(
               id,
               credit
@@ -120,7 +120,7 @@ export default {
             Swal.fire({
               icon: "success",
               title: "Success",
-              text: refarmtxn.hash,
+              text: refarmtxn,
             });
           }
         } catch (error) {
