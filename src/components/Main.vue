@@ -359,13 +359,16 @@ c91 -4 204 3 230 15 1 0 2 -42 2 -94z m-485 -246 c8 -39 54 -231 101 -427 46
     </section>
     <!-- End What We Do Section -->
     <!-- ======= About Section ======= -->
-    <section id="about" class="about" style="margin-left:100px;">
-      <div class="container">
-        <div class="row" style="margin-top:30px">
+    <section id="about" class="about">
+      <div class=" container">
+        <div class=" row" style="margin-top:30px;margin-bottom:25px">
           <div class="col-lg-6">
-            <img src="../assets/img/smart-farm.jpg" class="img-fluid" alt="" style="padding-top:60px" />
+            <img src="../assets/img/agriculture.jpg" class="img-fluid" alt="" style="width:100vh" />
           </div>
-          <div class="col-lg-6 pt-4 pt-lg-0" style="padding-left:100px">
+          <!-- <div class="col-lg-2">
+
+          </div> -->
+          <div class="col-lg-6 pt-4 pt-lg-0">
             <h3 style="color:#fff">Hakkımızda</h3>
             <p style="font-size:1.25rem;font-weight:550;color:#fff">
               Dünya'da tarımsal üretim sürekli artmasına rağmen, mevcut talebi
@@ -376,19 +379,10 @@ c91 -4 204 3 230 15 1 0 2 -42 2 -94z m-485 -246 c8 -39 54 -231 101 -427 46
               Bu bakımdan, bu gelişmelere paralel olarak ekilebilir arazi ve tarımsal potansiyele sahip gelişmekte olan
               ülkelerin tarımsal üretim açısından önemi
               artmaktadır.
+
             </p>
-            <!-- <ul>
-              <li>
-                <i class="bx bx-check-double"></i> Ullamco laboris nisi ut
-                aliquip ex ea commodo consequat.
-              </li>
-              <li>
-                <i class="bx bx-check-double"></i> Duis aute irure dolor in
-                reprehenderit in voluptate velit.
-              </li>
-            </ul> -->
             <p style="font-size:1.25rem;font-weight:550;color:#fff">
-              Dünya'da artan nüfusa paralel olarak tarım ürünlerinde de önemli artışlar
+              <!-- Dünya'da artan nüfusa paralel olarak tarım ürünlerinde de önemli artışlar
               meydana gelmektedir. Diğer yandan, özellikle gelişmiş ülkelerde ekilebilir arazinin sınırına
               ulaşılmasından dolayı, üretimin başka
               iklim ve coğrafi bölgelerde de yapılabilmesi için yoğun çalışmalar yapılmaktadır. Çünkü, üretimin
@@ -399,7 +393,7 @@ c91 -4 204 3 230 15 1 0 2 -42 2 -94z m-485 -246 c8 -39 54 -231 101 -427 46
               açlık ve kıtlık tehlikesi daha da artacaktır. Nitekim
               açlık sorunu son yıllarda Dünya gündeminde önemli bir yer tutmaktadır. Bugün 37'si Afrika'da olmak üzere
               Dünya'nın 90 ülkesinde yetersiz beslenme mevcuttur. 300 milyondan fazlası Asya'da, 75 milyonu Afrika'da
-              olmak üzere 400 milyon insan açlık tehlikesi ile karşı karşıya bulunmaktadır.
+              olmak üzere 400 milyon insan açlık tehlikesi ile karşı karşıya bulunmaktadır. -->
               Peki bizler tarımdao olarak ne yapıyoruz, yeni nesil dünyada bilinçli ve teknolojik tarımla beraber büyük
               şirketlerden bireysel kişilere uzanaraktan kişileri ve kuruluşları ekosisteme dahil ederek artan nufüs
               sorunu ve gıda sorununu blokchain teknolojisiyle çözmeye odaklanıyoruz.
@@ -1067,9 +1061,9 @@ section {
 .about {
   padding: 10px 0;
   background-color: #00B786;
-  margin-right: 80px;
-  margin-left: 80px;
   border-radius: 10px;
+  margin-left: 80px;
+  margin-right: 80px;
 }
 
 .about h3 {
