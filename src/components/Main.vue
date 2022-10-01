@@ -365,7 +365,7 @@ c91 -4 204 3 230 15 1 0 2 -42 2 -94z m-485 -246 c8 -39 54 -231 101 -427 46
           <div class="col-lg-6">
             <img src="../assets/img/smart-farm.jpg" class="img-fluid" alt="" />
           </div>
-          <div class="col-lg-6 pt-4 pt-lg-0" style="background-color:#077437">
+          <div class="col-lg-6 pt-4 pt-lg-0" style="background-color:#00B786;border-radius:5px;">
             <h3 style="color:#fff">Hakkımızda</h3>
             <p style="font-size:1.25rem;font-weight:550;color:#fff">
               Dünya'da tarımsal üretim sürekli artmasına rağmen, mevcut talebi
@@ -480,7 +480,7 @@ c124 -36 271 -98 385 -163 187 -106 240 -133 305 -153 38 -12 196 -37 393 -61
 
 
               <!-- <font-awesome-icon icon="fa-solid fa-recycle" class="bi" /> -->
-              <h4><a href="#">Bilinçli tarım</a></h4>
+              <h4><a>Bilinçli tarım</a></h4>
               <p>
                 Minimum miktarda kaynak kullanarak maksimum verim almak ve bunun sonucunda da uygun fiyatlı ürün
                 çıkması.
@@ -518,7 +518,7 @@ l111 -98 29 34 c15 19 150 176 299 349 149 173 271 318 271 321 0 5 -128 117
 240 -220 318 l-24 49 1606 0 c1526 0 1606 -1 1599 -17z" />
                 </g>
               </svg>
-              <h4><a href="#">Açlık Krizi</a></h4>
+              <h4><a>Açlık Krizi</a></h4>
               <p>
                 Geleceğin en büyük sorunlarından açlık problemine de çözüm oluşturarak, elimizdeki kaynakları gelecek
                 nesillere aktarabilmek.
@@ -586,7 +586,7 @@ l525 -262 0 105 0 105 760 0 760 0 0 80 0 80 -840 0 -840 0 0 -55 0 -55 -265
                 </g>
               </svg>
 
-              <h4><a href="#">İthalat Azalması</a></h4>
+              <h4><a>İthalat Azalması</a></h4>
               <p>
                 Ülke içinde tarımı destekleyerek ithalat eden ürünlerin azalması. Bundan dolayı ithal edilirken yaşanan
                 ürün kaybı ve karbon salınımının azalması.
@@ -650,7 +650,7 @@ c4 -49 42 -81 85 -71 19 5 194 173 575 554 512 513 549 551 580 617 l33 70 5
                 </g>
               </svg>
 
-              <h4><a href="#">İş İmkanı</a></h4>
+              <h4><a>İş İmkanı</a></h4>
               <p>
                 Kırsal kesimde istihdam yaratarak köyden şehire göçe azaltmak.
               </p>
@@ -927,12 +927,12 @@ h6 {
   border-radius: 4px;
   transition: ease-in-out 0.3s;
   color: #fff;
-  background: #077437;
+  background: #00B786;
   text-transform: uppercase;
 }
 
 #hero .btn-get-started:hover {
-  background: #0a9145;
+  background: #066b50;
 }
 
 @media (max-width: 992px) {
@@ -995,7 +995,7 @@ section {
   display: block;
   width: 40px;
   height: 3px;
-  background: #077437;
+  background: #00B786;
   bottom: 0;
   left: calc(50% - 20px);
 }
@@ -1058,7 +1058,7 @@ section {
 
 .what-we-do .icon-box:hover h4 a,
 .what-we-do .icon-box:hover .icon i {
-  color: #0a9145;
+  color: #00B786;
 }
 
 /*--------------------------------------------------------------
@@ -1215,7 +1215,7 @@ section {
 
 .services .icon-box .bi {
   float: left;
-  color: #077437;
+  color: #00B786;
   font-size: 40px;
   line-height: 0;
 }
@@ -1243,7 +1243,7 @@ section {
 }
 
 .services .icon-box:hover h4 a {
-  color: #0a9145;
+  color: #00B786;
 }
 
 /*--------------------------------------------------------------
