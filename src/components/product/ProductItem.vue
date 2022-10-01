@@ -52,7 +52,7 @@ import Swal from "sweetalert2";
 
 
 
-const contractAddress = "0x19380F1C607cfA68432d7205d2f2f1C2FB4d833e";
+const contractAddress = "0x997111AFaf3b305caE45aab4c5ca9205790B6881";
 const contractABI = abi.abi;
 
 console.log(contractAddress);
@@ -92,7 +92,7 @@ export default {
       inputValue:null,
       progress: 100,
       currentContract: null,
-      contractAddress: "0xF327DDC516d5eFe3073B46b59dB50CcE94711c70",
+      contractAddress: "0x997111AFaf3b305caE45aab4c5ca9205790B6881",
     }
   },
   methods: {
@@ -116,8 +116,7 @@ export default {
             );
             console.log(refarmtxn);
             await refarmtxn.wa
-            // alert("mined ", refarmtxn.hash);
-            // console.log("data transaction happend!");
+            
             Swal.fire({
               icon: "success",
               title: "Success",

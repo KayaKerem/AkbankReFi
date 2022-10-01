@@ -58,7 +58,7 @@ import Swal from "sweetalert2";
 
 
 
-const contractAddress = "0x19380F1C607cfA68432d7205d2f2f1C2FB4d833e";
+const contractAddress = "0x997111AFaf3b305caE45aab4c5ca9205790B6881";
 const contractABI = abi.abi;
 
 console.log(contractAddress);
@@ -132,29 +132,16 @@ export default {
             signer
           );
           console.log("transaction happening...");
-           const farmName = await Refarm.getFieldName(
-             1
-           );
-           const farmLimit = await Refarm.defaultMaxMoney(
-             
-           );
-           const totalLockedMoney = await Refarm.getTotalLockedMoney(
-             1
-          );
-          this.products1 = [{
-            description: "Lorem ips",
-            id: 1,
-            limit: farmLimit,
-            quantity: totalLockedMoney,
-            thumbnail_url:
-              "https://cdn1.ntv.com.tr/gorsel/GmgQlcwngEW4nWI_Y6W3lw.jpg?width=952&height=540&mode=both&scale=both",
-            title: farmName,
-           }]
-          
+          const fields = await Refarm.getAllFields();
+          const hexToDecimal = hex => parseInt(hex, 16);
+          for (let i in fields) {
+            this.products1.push({ "id": hexToDecimal(fields[i][0]["_hex"]), "title": fields[i][1], "description": "Lorem ipsum dolor sit amet", "limit": hexToDecimal(fields[i][4]["_hex"]), "quantity": hexToDecimal(fields[i][3]["_hex"]), "thumbnail_url": "https://cdn1.ntv.com.tr/gorsel/GmgQlcwngEW4nWI_Y6W3lw.jpg?width=952&height=540&mode=both&scale=both" });
+          }
+
           Swal.fire({
             icon: "success",
             title: "Success",
-            text: farmName + " " + totalLockedMoney + " / " + farmLimit,
+            text: fields ,
           });
           this.isProductLoading=false;
         }
@@ -163,7 +150,7 @@ export default {
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "Yetersiz Bakiye",
+          text: error,
         });
       }
     },
