@@ -51,7 +51,46 @@
 import ProductItem from "./product/ProductItem.vue";
 // import GridLoader from "vue-spinner/src/GridLoader.vue";
 import Loader from "./Loader.vue";
-import axios from "axios";
+import { ethers } from "ethers";
+import abi from "./utils/refarm.json";
+import Refarm from "./utils/refarm.json";
+import Swal from "sweetalert2";
+
+
+
+const contractAddress = "0x19380F1C607cfA68432d7205d2f2f1C2FB4d833e";
+const contractABI = abi.abi;
+
+console.log(contractAddress);
+console.log(contractABI);
+console.log(Refarm);
+
+const AVALANCHE_MAINNET_PARAMS = {
+  chainId: '0xA86A',
+  chainName: 'Avalanche Mainnet C-Chain',
+  nativeCurrency: {
+    name: 'Avalanche',
+    symbol: 'AVAX',
+    decimals: 18
+  },
+  rpcUrls: ['https://api.avax.network/ext/bc/C/rpc'],
+  blockExplorerUrls: ['https://snowtrace.io/']
+}
+console.log(AVALANCHE_MAINNET_PARAMS)
+const AVALANCHE_TESTNET_PARAMS = {
+  chainId: '43113',
+  chainName: 'Avalanche FUJI C-Chain',
+  nativeCurrency: {
+    name: 'Avalanche',
+    symbol: 'AVAX',
+    decimals: 18
+  },
+  rpcUrls: ['https://api.avax-test.network/ext/bc/C/rpc'],
+  blockExplorerUrls: ['https://testnet.snowtrace.io/']
+}
+console.log(AVALANCHE_TESTNET_PARAMS)
+const AVALANCHE_NETWORK_PARAMS = AVALANCHE_TESTNET_PARAMS
+console.log(AVALANCHE_NETWORK_PARAMS)
 export default {
   data() {
     return {
@@ -59,8 +98,11 @@ export default {
       loaderSize: "50px",
       displayList: false,
       products1: [],
-      isProductLoading: false,
+      isProductLoading: true,
     };
+  },
+  created() {
+     this.getFields()
   },
   computed: {
     // ...mapGetters(["products", "isProductLoading"]),
@@ -71,59 +113,59 @@ export default {
     // GridLoader,
   },
   mounted() {
-    this.products1 = [
-      {
-        description: "lorem ipsum",
-        id: 1,
-        price: 10,
-
-        limit: 100,
-        quantity: 30,
-        thumbnail_url:
-          "https://cdn1.ntv.com.tr/gorsel/GmgQlcwngEW4nWI_Y6W3lw.jpg?width=952&height=540&mode=both&scale=both",
-        title: "Kütahya",
-      },
-      {
-        description: "lorem ipsum",
-        id: 1,
-        price: 10,
-        limit: 100,
-        quantity: 15,
-        thumbnail_url:
-          "https://cdn1.ntv.com.tr/gorsel/GmgQlcwngEW4nWI_Y6W3lw.jpg?width=952&height=540&mode=both&scale=both",
-        title: "Kütahya",
-      },
-      {
-        description: "lorem ipsum",
-        id: 1,
-        price: 10,
-        limit: 100,
-        quantity: 15,
-        thumbnail_url:
-          "https://cdn1.ntv.com.tr/gorsel/GmgQlcwngEW4nWI_Y6W3lw.jpg?width=952&height=540&mode=both&scale=both",
-        title: "Kütahya",
-      },
-      {
-        description: "lorem ipsum",
-        id: 1,
-        price: 10,
-        limit: 100,
-        quantity: 15,
-        thumbnail_url:
-          "https://cdn1.ntv.com.tr/gorsel/GmgQlcwngEW4nWI_Y6W3lw.jpg?width=952&height=540&mode=both&scale=both",
-        title: "Kütahya",
-      },
-    ];
-    axios.get("http://127.0.0.1:5000/products").then((res) => {
-      let dt = res.data["data"];
-      this.products1 = dt;
-
-      this.isProductLoading = false;
-    });
+ 
+    
   },
   methods: {
     changeDisplay(isList) {
       this.displayList = isList;
+    },
+    getFields: async function () {
+      try {
+        const { ethereum } = window;
+        if (ethereum) {
+          const provider = new ethers.providers.Web3Provider(ethereum, "any");
+          const signer = provider.getSigner();
+          const Refarm = new ethers.Contract(
+            contractAddress,
+            contractABI,
+            signer
+          );
+          console.log("transaction happening...");
+           const farmName = await Refarm.getFieldName(
+             1
+           );
+           const farmLimit = await Refarm.defaultMaxMoney(
+             
+           );
+           const totalLockedMoney = await Refarm.getTotalLockedMoney(
+             1
+          );
+          this.products1 = [{
+            description: "Lorem ips",
+            id: 1,
+            limit: farmLimit,
+            quantity: totalLockedMoney,
+            thumbnail_url:
+              "https://cdn1.ntv.com.tr/gorsel/GmgQlcwngEW4nWI_Y6W3lw.jpg?width=952&height=540&mode=both&scale=both",
+            title: farmName,
+           }]
+          
+          Swal.fire({
+            icon: "success",
+            title: "Success",
+            text: farmName + " " + totalLockedMoney + " / " + farmLimit,
+          });
+          this.isProductLoading=false;
+        }
+      } catch (error) {
+        this.transactionError = true;
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Yetersiz Bakiye",
+        });
+      }
     },
   },
 };
