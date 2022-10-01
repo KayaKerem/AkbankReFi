@@ -46,7 +46,7 @@ body,
 
 .flex-fill {
   flex: 1 1 auto;
-  background-color: "#fff" !important;
+  background-color: "#F9F9F9" !important;
 }
 
 footer {
