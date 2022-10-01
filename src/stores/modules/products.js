@@ -1,18 +1,16 @@
 const state = {
-	isLoading: true,
-	productList: [
-		
-	]
+    isLoading: true,
+    productList: [
+
+    ]
 }
 
 const mutations = {
-	'UPDATE_PRODUCT_LIST' (state, productList) {
-		state.productList = productList;
-		if (productList.length > 1) {
-			state.isLoading = false;
-		}
-		
-	}
+    'UPDATE_PRODUCT_LIST' (state, productList) {
+        state.productList = productList;
+
+
+    }
 }
 
 const actions = {
@@ -20,17 +18,17 @@ const actions = {
 }
 
 const getters = {
-	products: (state) => {
-		return state.productList;
-	},
-	isProductLoading: (state) => {
-		return state.isLoading;
-	}
+    products: (state) => {
+        return state.productList;
+    },
+    isProductLoading: (state) => {
+        return state.isLoading;
+    }
 }
 
 export default {
-	state,
-	mutations,
-	actions,
-	getters
+    state,
+    mutations,
+    actions,
+    getters
 }

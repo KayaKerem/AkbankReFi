@@ -8,20 +8,20 @@
         <div class="row">
           <div class="col-12 col-md-4 offset-md-4">
             <div class="intrinsic">
-              <img class="img-fluid intrinsic-item" :src="item.thumbnail_url" alt="" />
+              <img class="img-fluid intrinsic-item" :src="product.thumbnail_url" alt="" />
             </div>
           </div>
         </div>
 
         <div class="caption-full">
-          <h4 class="pull-right">$ {{ item.price }}</h4>
-          <h4 id="item-title">{{ item.title }}</h4>
-          <p>{{ item.description }}</p>
+          <h4 class="pull-right">$ {{ product.price }}</h4>
+          <h4 id="item-title">{{ product.title }}</h4>
+          <p>{{ product.description }}</p>
         </div>
         <div class="ratings">
-          <span v-if="item.quantity<1000">{{ item.quantity }} paket kaldı</span>
+          <span v-if="product.quantity<1000">{{ product.quantity }} paket kaldı</span>
           <p class="pull-right">
-            <button @click="addItem" :disabled="item.quantity === 0" class="btn btn-success">
+            <button @click="addItem" :disabled="product.quantity === 0" class="btn btn-success">
               Sepete ekle
             </button>
           </p>
@@ -33,9 +33,9 @@
 </template>
 
 <script>
-// import { mapGetters } from "vuex";
+import { listenToProductList } from "./utils/datas.js"
 
-import axios from "axios";
+
 import Loader from "./Loader.vue";
 export default {
   components: {
@@ -45,29 +45,32 @@ export default {
     return {
       loaderColor: "#5cb85c",
       loaderSize: "50px",
-      products: [],
+      product: {},
       isProductLoading: true,
       item: null,
     };
+  }, methdos: {
+    
   },
-  mounted() {
-    axios.get("http://127.0.0.1:5000/products").then((res) => {
-      //smartcontracts
-      let dt = res.data["data"];
-      this.products = dt;
-      let id = this.$route.params.id;
-      for (let i in dt) {
-        if (dt[i]["id"] == id) {
-          this.item = dt[i];
-        }
+  async created() {
+   
+  
+    let products = await listenToProductList();
+  
+    for (let i in products) {
+      if (products[i]["id"] == this.$route.params.id) {
+        this.product = products[i];
       }
-      this.isProductLoading = false;
-    });
+    }
+    console.log("ASDASDAS")
+    console.log(this.product)
+    this.isProductLoading = false;
+
+
   },
 
 
   methods: {
-
 
   },
 };
