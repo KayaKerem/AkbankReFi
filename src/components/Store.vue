@@ -4,7 +4,7 @@
       <grid-loader></grid-loader>
     </div>
     <div v-else class="row action-panel">
-      <div class="container" style="padding-top: 60px">
+      <div class="container" style="padding-top: 100px">
         <div class="section-title">
           <h2 style="color: #444444">Tarımsal Projeler</h2>
         </div>
@@ -132,7 +132,7 @@ export default {
           const fields = await Refarm.getAllFields();
           const hexToDecimal = hex => parseInt(hex, 16);
           for (let i in fields) {
-            this.products1.push({ "id": hexToDecimal(fields[i][0]["_hex"]), "title": fields[i][1], "description": "Lorem ipsum dolor sit amet", "limit": hexToDecimal(fields[i][4]["_hex"]), "quantity": hexToDecimal(fields[i][3]["_hex"]), "thumbnail_url": "https://cdn1.ntv.com.tr/gorsel/GmgQlcwngEW4nWI_Y6W3lw.jpg?width=952&height=540&mode=both&scale=both" });
+            this.products1.push({ "id": hexToDecimal(fields[i][0]["_hex"]), "title": fields[i][1], "description": "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet", "limit": hexToDecimal(fields[i][4]["_hex"]), "quantity": hexToDecimal(fields[i][3]["_hex"]), "thumbnail_url": "https://cdn1.ntv.com.tr/gorsel/GmgQlcwngEW4nWI_Y6W3lw.jpg?width=952&height=540&mode=both&scale=both" });
           }
 
       
