@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-5 col-sm-6 col-md-6 col-lg-6 item" :class="{ 'list-group-item': displayList }">
+  <div class="mb-5 col-sm-6 col-md-12 col-lg-4 item" :class="{ 'list-group-item': displayList }">
     <div class="thumbnail card">
       <div class="img-event intrinsic" style="background-color:#eaf774">
         <img :src="item.thumbnail_url" alt="" class="grow thumbnail-image card-img-top intrinsic-item p-3" />
