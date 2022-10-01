@@ -1,13 +1,15 @@
 <template>
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark" role="navigation">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3" role="navigation">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
-      <router-link to="/" class="navbar-brand mr-auto">TRM Avax
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-infinity"
+      <router-link to="/" class="navbar-brand mr-auto " style="font-size:1.75rem;font-weight:700;">TRM
+        Avax
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-infinity"
           viewBox="0 0 16 16">
           <path
             d="M5.68 5.792 7.345 7.75 5.681 9.708a2.75 2.75 0 1 1 0-3.916ZM8 6.978 6.416 5.113l-.014-.015a3.75 3.75 0 1 0 0 5.304l.014-.015L8 8.522l1.584 1.865.014.015a3.75 3.75 0 1 0 0-5.304l-.014.015L8 6.978Zm.656.772 1.663-1.958a2.75 2.75 0 1 1 0 3.916L8.656 7.75Z" />
-        </svg>
+        </svg> -->
+        <img src="../assets/img/logomain.png" alt="logomain" style="width:7%;" />
       </router-link>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTop"
         aria-controls="navbarTop" aria-expanded="false" aria-label="Toggle navigation" @click="toggleNavbar">

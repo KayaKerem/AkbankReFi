@@ -1,30 +1,31 @@
 <template>
-  <div class="mb-5 col-sm-6 col-md-6 col-lg-6 item" :class="{ 'list-group-item': displayList }" style="background-color: rgb(249, 249, 249);">
+  <div class="mb-5 col-sm-6 col-md-6 col-lg-6 item" :class="{ 'list-group-item': displayList }">
     <div class="thumbnail card">
-      <div class="img-event intrinsic" style="background-color:rgb(255, 248, 204)">
+      <div class="img-event intrinsic" style="background-color:#eaf774">
         <img :src="item.thumbnail_url" alt="" class="grow thumbnail-image card-img-top intrinsic-item p-3" />
       </div>
       <div class="card-body">
         <router-link :to="'/product/' + item.id" tag="h5" class="card-title"><a id="item-title">{{ item.title }}</a>
         </router-link>
         <h6 v-if="item.quantity < 1000 && item.quantity > 0" class="card-subtitle mb-2 remain">
-           {{ item.quantity }} USDC kaldı!
+          {{ item.quantity }} USDC kaldı!
         </h6>
-          <div class="progress">
-            <div class="progress-bar bg-warning" role="progressbar"          
-            v-bind:style="{ width: (item.quantity)  + '%'}"
-            v-bind:aria-valuenow="item.quantity"
-            aria-valuemin="0"
-            aria-valuemax="100"
->{{item.quantity}} USDC</div>
+        <div class="progress">
+          <div class="progress-bar bg-warning" role="progress" v-bind:style="{ width: (item.quantity)  + '%'}"
+            v-bind:aria-valuenow="item.quantity" aria-valuemin="0" aria-valuemax="100">
+
+            {{item.quantity}} USDC
+
+
           </div>
+        </div>
         <p class="card-text truncate">
           {{ item.description | shortDescription }}
         </p>
 
         <div class="row">
           <!-- <p class="col-6 lead"> Min {{ item.price }} USDC</p> -->
-          
+
           <p class="col">
             <button class="btn btn-success pull-right" :disabled="item.quantity === 0" @click="this.invest">
               Katıl
@@ -42,14 +43,14 @@ import Swal from 'sweetalert2'
 export default {
   props: ["item", "displayList"],
   data() {
-    return { 
-    progress:100  
+    return {
+      progress: 100
     }
   },
   methods: {
     ...mapActions(["addMessage"]),
     invest() {
-     
+
       Swal.fire({
         title: 'Yatırım yapacağınız miktarı belirleyin',
         input: 'range',
@@ -193,13 +194,13 @@ div.card {
 
 .btn-success {
   color: #fff;
-  background-color: #091239;
-  border-color: #091239;
+  background-color: #077437;
+  border-color: #077437;
 }
 
 .btn-success:hover {
-  background-color: #EFB631;
-  border-color: #EFB631;
+  background-color: #0a9145;
+  border-color: #0a9145;
 }
 </style>
 
