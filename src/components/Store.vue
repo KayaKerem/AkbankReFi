@@ -6,7 +6,7 @@
     <div v-else class="row action-panel">
       <div class="container" style="padding-top: 100px">
         <div class="section-title">
-          <h2 style="color: #444444">Tarımsal Projeler</h2>
+          <h2 style="color: #444444">Tarım Projeleri</h2>
         </div>
       </div>
     </div>
@@ -62,32 +62,7 @@ console.log(contractAddress);
 console.log(contractABI);
 console.log(Refarm);
 
-const AVALANCHE_MAINNET_PARAMS = {
-  chainId: '0xA86A',
-  chainName: 'Avalanche Mainnet C-Chain',
-  nativeCurrency: {
-    name: 'Avalanche',
-    symbol: 'AVAX',
-    decimals: 18
-  },
-  rpcUrls: ['https://api.avax.network/ext/bc/C/rpc'],
-  blockExplorerUrls: ['https://snowtrace.io/']
-}
-console.log(AVALANCHE_MAINNET_PARAMS)
-const AVALANCHE_TESTNET_PARAMS = {
-  chainId: '43113',
-  chainName: 'Avalanche FUJI C-Chain',
-  nativeCurrency: {
-    name: 'Avalanche',
-    symbol: 'AVAX',
-    decimals: 18
-  },
-  rpcUrls: ['https://api.avax-test.network/ext/bc/C/rpc'],
-  blockExplorerUrls: ['https://testnet.snowtrace.io/']
-}
-console.log(AVALANCHE_TESTNET_PARAMS)
-const AVALANCHE_NETWORK_PARAMS = AVALANCHE_TESTNET_PARAMS
-console.log(AVALANCHE_NETWORK_PARAMS)
+
 export default {
   data() {
     return {
@@ -135,8 +110,16 @@ export default {
             this.products1.push({ "id": hexToDecimal(fields[i][0]["_hex"]), "title": fields[i][1], "description": "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet", "limit": hexToDecimal(fields[i][4]["_hex"]), "quantity": hexToDecimal(fields[i][3]["_hex"]), "thumbnail_url": "https://cdn1.ntv.com.tr/gorsel/GmgQlcwngEW4nWI_Y6W3lw.jpg?width=952&height=540&mode=both&scale=both" });
           }
 
-      
-          this.isProductLoading=false;
+          this.products1[0]["description"] = "Konyada yetişen buğdaylarla alakalı bazı durumlar ve açıkalamakr infolar analizler v vs yazma yeri Konyada yetişen buğdaylarla alakalı bazı durumlar ve açıkalamakr infolar analizler v vs yazma yeri"
+          this.products1[1]["description"] = "Ordunun Dereleri Aksa Yukarı AksaVermem Seni Ellere Ordu Üstüme Kalksa(Sürmelim Aman) Ordunun Dereleri Aksa Yukarı AksaVermem Seni Ellere Ordu Üstüme Kalksa(Sürmelim Aman) "
+          this.products1[2]["description"] ="Isparta ve çevresindeki yerleşim tarihi Paleolitik döneme kadar uzanmaktadır. Isparta'nın da önemli yerleşim merkezlerinden biri olduğu Pisidia bölgesine MÖ 2000’lerde Luvi ve Arzava toplulukları yerleşmiştir. Daha sonra bölgeye MÖ 1200'lerden itibaren Frigler, Lidyalılar, Persler ve Makedonyalılar egemen olmuştur. MÖ 323’te Büyük İskender’in"
+          this.products1[3]["description"] = "Antik Çağ yazılı kaynaklarında Rhizus (Ριζοῦς) olarak anılan Rize adının Yunanca ριζα (riza) isminden geldiği sanılmakta olup anlamıDağ Eteğidir. Bazı yazarlar kent adını yine Yunanca pirinç anlamına gelen rizi (ρύζι) ile kök, temel, esas anlamına gelen Riza (ῥίζα) kelimesiyle ilişkilendirmiş,"
+          this.products1[0]["thumbnail_url"] = "https://static.birgun.net/resim/haber-detay-resim/2022/07/06/son-bir-ayda-4-bin-120-donum-ekili-ve-hasat-bekleyen-bugday-tarlasi-yandi-1037629-5.jpg"
+          this.products1[1]["thumbnail_url"] = "http://bizimanadolu.com.tr/images/haberler/duzce-akcakoca-da-satilik-findik-bahcesi.jpg"
+          this.products1[2]["thumbnail_url"] = "https://www.denizligazetesi.com/images/upload/AW037930_03.jpg"
+          this.products1[3]["thumbnail_url"] = "https://icdn.ensonhaber.com/resimler/galeri/3e965c628c3c118d7e6a0aa4b4643c50.jpg"
+
+          this.isProductLoading = false;
         }
       } catch (error) {
         this.transactionError = true;
