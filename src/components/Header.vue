@@ -29,9 +29,9 @@
 
 
           <li>
-            <router-link id="orderbutton" to="/order" class="btn btn-dark navbar-btn" tag="button">
+            <button id="orderbutton"  class="btn btn-dark navbar-btn" tag="button" @click="getWhitepaper">
               Whitepaper
-            </router-link>
+            </button>
           </li>
 
 
@@ -86,6 +86,7 @@
 // import axios from "axios";
 import { mapActions } from "vuex";
 // import { ethers } from "ethers";
+import Swal from "sweetalert2";
 
 
 export default {
@@ -115,6 +116,23 @@ export default {
   },
   methods: {
     ...mapActions(["addMessage", "clearMessage"]),
+    getWhitepaper() {
+      Swal.fire({
+        title: '<h1>ReFarm</h1>',
+        icon: 'info',
+        html:
+           '<p>Lorem Ipsum Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum Lorem Ipsum Lorem IpsumLorem IpsumLorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem Ipsum Lorem IpsumvLorem IpsumLorem Ipsum v vvLorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum</p>',
+
+        showCloseButton: true,
+        
+        focusConfirm: false,
+        confirmButtonText:
+          '<i class="fa fa-thumbs-up"></i> Anladım!',
+        confirmButtonAriaLabel: 'Thumbs up, Anladım!',
+        
+      })
+      
+    },
     toggleNavbar() {
       this.isNavOpen = !this.isNavOpen;
     },
