@@ -3,7 +3,7 @@
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <router-link to="/" class="navbar-brand mr-auto " style="font-size:1.75rem;font-weight:700;">TRM
-        Avax
+        
         <!-- <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-infinity"
           viewBox="0 0 16 16">
           <path
@@ -101,7 +101,11 @@ export default {
 
   },
   mounted() {
-    this.checkConnectedWalletExist()
+    this.checkConnectedWalletExist();
+    window.ethereum.on('accountsChanged', accounts => this.setState({ accounts }))
+
+    // Reload the site if the user selects a different chain
+    window.ethereum.on('chainChanged', () => window.location.reload())
   },
   methods: {
     ...mapActions(["addMessage", "clearMessage"]),
