@@ -57,7 +57,8 @@ contract Fields {
     mapping(uint256 => mapping(address => uint256)) balancesOfInvestedMoney;//Tarla id -> (Yatırımcı adresi --> yatırımcının ne kadar yatırdığı)
 
     constructor(){
-        USDc = USDC(0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664);//USDC Avalanche ağına ait smart contract adresi
+        USDc = USDC(0x1Ad483798422423E3471d2fa8a7eF6EB83BD4926);//USDC Avalanche ağına ait smart contract adresi
+        //0x1Ad483798422423E3471d2fa8a7eF6EB83BD4926 //Tesnet
     }               
 
 
