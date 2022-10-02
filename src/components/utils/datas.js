@@ -51,10 +51,11 @@ export async function listenToProductList() {
             console.log("Success");
         }
     } catch (error) {
+        console.log(error);
         Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: error,
+            text: "Yetersiz Bakiye",
         });
     }
 
@@ -83,7 +84,7 @@ export async function lockMoney(id, credit) {
         Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: error,
+            text: "Cüzdanınızda yeterli usdc bulunmamaktadır.",
         });
     }
 }
