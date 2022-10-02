@@ -7,11 +7,11 @@
       <div class="card-body" style="border-bottom-right-radius: 20px;    border-bottom-left-radius: 20px;    background-color: #f9f9f9 !important;">
         <router-link :to="'/product/' + item.id" tag="h3" class="card-title"><a id="item-title">{{ item.title }}</a>
         </router-link>
-        <h6 v-if="item.quantity < 1000 && item.quantity > 0" class="card-subtitle mb-2 remain">
+        <!-- <h6 v-if="item.quantity < 1000 && item.quantity > 0" class="card-subtitle mb-2 remain">
           {{ item.quantity }} USDC kaldı!
-        </h6>
+        </h6> -->
         <div class="progress">
-          <div class="progress-bar bg-warning" role="progress" v-bind:style="{ width: (item.quantity)  + '%'}"
+          <div class="progress-bar bg-warning" role="progress" v-bind:style="{ width: ((item.quantity*100)/item.limit) + '%'}"
             v-bind:aria-valuenow="item.quantity" aria-valuemin="0" aria-valuemax="100">
 
             
@@ -141,17 +141,16 @@ export default {
         }
       },
     invest: async function () {
-      
       await Swal.fire({
         title: 'Yatırım yapacağınız miktarı belirleyin',
         input: 'range',
         inputLabel: 'USDC ',
         inputAttributes: {
-          min: 10,
-          max: 100,
+          min: (this.item.limit / 100),
+          max: (this.item.limit - this.item.quantity),
           step: 1
         },
-        inputValue: 25,
+        inputValue: (this.item.limit / 100),
         confirmButtonText: 'Onayla',
         showLoaderOnConfirm: true,
         preConfirm: (inputValue) => {
