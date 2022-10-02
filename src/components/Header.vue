@@ -29,9 +29,9 @@
 
 
           <li>
-            <button id="orderbutton"  class="btn btn-dark navbar-btn" tag="button" @click="getWhitepaper">
+            <router-link to="/sorry"  id="orderbutton"  class="btn btn-dark navbar-btn" tag="button" >
               Whitepaper
-            </button>
+            </router-link>
           </li>
 
 
