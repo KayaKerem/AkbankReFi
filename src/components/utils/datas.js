@@ -32,13 +32,13 @@ export async function listenToProductList() {
             }
 
             products1[0]["description"] =
-                "Konyada yetişen buğdaylarla alakalı bazı durumlar ve açıkalamakr infolar analizler v vs yazma yeri Konyada yetişen buğdaylarla alakalı bazı durumlar ve açıkalamakr infolar analizler v vs yazma yeri";
+                "Buğday gerek ülkemizin gerekse tüm Dünya ülkeleri için temel besin kaynağı olan stratejik bir üründür. Konya’da toplam 2.6milyon hektar tarım arazisi mevcut olup bunun yaklaşık 700.000 hektarlık kısmında buğday yetiştiriciliği yapılmaktadır. Bu bölge Türkiye buğday üretiminin yaklaşık %10’unu, sertifikalı buğday tohumluğu üretiminin ise %20’sini karşılamaktır.";
             products1[1]["description"] =
-                "Ordunun Dereleri Aksa Yukarı AksaVermem Seni Ellere Ordu Üstüme Kalksa(Sürmelim Aman) Ordunun Dereleri Aksa Yukarı AksaVermem Seni Ellere Ordu Üstüme Kalksa(Sürmelim Aman) ";
+                "Yüzyıllardır fındık tarımı yapılan bu bölgede ihracat da çok eskilere dayanmaktadır. Bölgenin iklim koşulları fındık yetiştiriciliğine uygun olduğu için çok eskilerden itibaren bu bölgelerde fındık tarımı yapılmaktadır. Yazılı belgelere göre ilk fındık ihracatı 1403 yılında yapılmıştır. Bu bölgede fındık tarımı ve ihracatı bir kültür olmuştur.";
             products1[2]["description"] =
-                "Isparta ve çevresindeki yerleşim tarihi Paleolitik döneme kadar uzanmaktadır. Isparta'nın da önemli yerleşim merkezlerinden biri olduğu Pisidia bölgesine MÖ 2000’lerde Luvi ve Arzava toplulukları yerleşmiştir. Daha sonra bölgeye MÖ 1200'lerden itibaren Frigler, Lidyalılar, Persler ve Makedonyalılar egemen olmuştur. MÖ 323’te Büyük İskender’in";
+                "Türk ve Dünya standartlarına uygun gülyağı ve gül konkreti üretimini gerçekleştiren, dünyanın  bu alanda en büyük üretici ve ihracatçı bölgesi olarak gül tarımı Isparta'da her zaman ön planda olmuştur. Bölgedeki gül ürünleri fabrikaları ile ürünün alıcısı hazır konumdadır.";
             products1[3]["description"] =
-                "Antik Çağ yazılı kaynaklarında Rhizus (Ριζοῦς) olarak anılan Rize adının Yunanca ριζα (riza) isminden geldiği sanılmakta olup anlamıDağ Eteğidir. Bazı yazarlar kent adını yine Yunanca pirinç anlamına gelen rizi (ρύζι) ile kök, temel, esas anlamına gelen Riza (ῥίζα) kelimesiyle ilişkilendirmiş,";
+                "Doğu Karadeniz Bölgesinin doğusunda ve deniz kıyısında yer alan Rize'nin en temel özelliği, yaş çay üretiminin merkezi olmasıdır. İlin ekonomisine ve ticaretine, makinesiz yapılan çay tarımı damgasını vurur.  Rize'de, yaş çay tarımı 49.960 hektarlık alanda yapılmakta olup, yılda ortalama 1.152.647 ton yaş çay mahsulü alımına karşılık yıllık yaklaşık olarak 290.529 ton kuru çay üretimi gerçekleşmektedir.";
             products1[0]["thumbnail_url"] =
                 "https://static.birgun.net/resim/haber-detay-resim/2022/07/06/son-bir-ayda-4-bin-120-donum-ekili-ve-hasat-bekleyen-bugday-tarlasi-yandi-1037629-5.jpg";
             products1[1]["thumbnail_url"] =
