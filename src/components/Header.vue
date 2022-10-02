@@ -29,9 +29,9 @@
 
 
           <li>
-            <button id="orderbutton"  class="btn btn-dark navbar-btn" tag="button" @click="getWhitepaper">
+            <a href="./utils/Re-Farm.pdf" target="_blank" id="orderbutton"  class="btn btn-dark navbar-btn" tag="button" >
               Whitepaper
-            </button>
+            </a>
           </li>
 
 

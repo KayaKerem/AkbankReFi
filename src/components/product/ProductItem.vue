@@ -53,11 +53,11 @@
 
 <script>
 import { mapActions } from "vuex";
-import { ethers } from "ethers";
+// import { ethers } from "ethers";
 import abi from "../utils/refarm.json";
 import Refarm from "../utils/refarm.json";
 import Swal from "sweetalert2";
-
+import {lockMoney} from "../utils/datas.js"
 
 
 const contractAddress = "0x997111AFaf3b305caE45aab4c5ca9205790B6881";
@@ -67,32 +67,7 @@ console.log(contractAddress);
 console.log(contractABI);
 console.log(Refarm);
 
-const AVALANCHE_MAINNET_PARAMS = {
-  chainId: '0xA86A',
-  chainName: 'Avalanche Mainnet C-Chain',
-  nativeCurrency: {
-    name: 'Avalanche',
-    symbol: 'AVAX',
-    decimals: 18
-  },
-  rpcUrls: ['https://api.avax.network/ext/bc/C/rpc'],
-  blockExplorerUrls: ['https://snowtrace.io/']
-}
-console.log(AVALANCHE_MAINNET_PARAMS)
-const AVALANCHE_TESTNET_PARAMS = {
-  chainId: '43113',
-  chainName: 'Avalanche FUJI C-Chain',
-  nativeCurrency: {
-    name: 'Avalanche',
-    symbol: 'AVAX',
-    decimals: 18
-  },
-  rpcUrls: ['https://api.avax-test.network/ext/bc/C/rpc'],
-  blockExplorerUrls: ['https://testnet.snowtrace.io/']
-}
-console.log(AVALANCHE_TESTNET_PARAMS)
-const AVALANCHE_NETWORK_PARAMS = AVALANCHE_TESTNET_PARAMS
-console.log(AVALANCHE_NETWORK_PARAMS)
+
 export default {
   props: ["item", "displayList"],
   data() {
@@ -105,41 +80,7 @@ export default {
   },
   methods: {
     ...mapActions(["addMessage"]),
-    lockMoney: async function (id,credit) {
-        try {
-          const { ethereum } = window;
-          if (ethereum) {
-            const provider = new ethers.providers.Web3Provider(ethereum, "any");
-            const signer = provider.getSigner();
-            const Refarm = new ethers.Contract(
-              contractAddress,
-              contractABI,
-              signer
-            );
-           
-            const refarmtxn = await Refarm.lockMoney(
-              id,
-              credit
-
-            );
-            console.log(refarmtxn);
-            await refarmtxn.wa
-            
-            Swal.fire({
-              icon: "success",
-              title: "Success",
-              text: refarmtxn,
-            });
-          }
-        } catch (error) {
-          this.transactionError = true;
-          Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: error,
-          });
-        }
-      },
+    
     invest: async function () {
       await Swal.fire({
         title: 'Yatırım yapacağınız miktarı belirleyin',
@@ -155,7 +96,7 @@ export default {
         showLoaderOnConfirm: true,
         preConfirm: (inputValue) => {
           this.inputValue = inputValue
-          this.lockMoney(this.item.id, inputValue);
+          lockMoney(this.item.id, inputValue);
         },
         allowOutsideClick: () => !Swal.isLoading()
       }).then(() => {
