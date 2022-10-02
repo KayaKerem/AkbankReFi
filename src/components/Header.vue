@@ -29,9 +29,9 @@
 
 
           <li>
-            <a href="./utils/Re-Farm.pdf" target="_blank" id="orderbutton"  class="btn btn-dark navbar-btn" tag="button" >
+            <router-link to="/sorry"  id="orderbutton"  class="btn btn-dark navbar-btn" tag="button" >
               Whitepaper
-            </a>
+            </router-link>
           </li>
 
 

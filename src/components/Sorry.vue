@@ -1,46 +1,43 @@
 <template>
-  <div class="container" id="page">
-    
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center" >
+      <img id="image" src="../assets/1.png" alt="">
+    </div>
   </div>
+  <div class="row">
+    <div class="col-12 text-center" >
+      <img src="../assets/2.png" alt="">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 text-center" >
+      <img src="../assets/3.png" alt="">
+    </div>
+  </div>
+</div>
 </template>
 
 <script>
+
+
 export default {
-  data() {
-    return {};
+  components: {
+    
   },
-  created() {},
-  methods: {},
-  mounted() {},
-};
+  data() {
+    return { 
+      
+    }
+  },
+  created() {
+    
+  }
+}
 </script>
 
-<style >
-#page {
-  text-align: center;
-  /* padding: 40px 0; */
-}
-#sorry-text {
-  color: #091239;
-  font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
-  font-weight: 900;
-  font-size: 40px;
-  margin-bottom: 10px;
-}
-#sorry-message {
-  color: #404f5e;
-  font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
-  font-size: 20px;
-  margin: 0;
-}
-
-
-#sorry-card {
-  /* background: white; */
-  padding: 60px;
-  border-radius: 100px;
-  box-shadow: 0 2px 3px #c8d0d8;
-  display: inline-block;
-  margin-top: 80px !important;
+<style scoped>
+#image{
+  max-width:100%;
 }
 </style>
