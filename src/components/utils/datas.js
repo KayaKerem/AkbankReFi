@@ -37,7 +37,7 @@ export async function listenToProductList() {
             products1[2]["thumbnail_url"] = "https://www.denizligazetesi.com/images/upload/AW037930_03.jpg"
             products1[3]["thumbnail_url"] = "https://icdn.ensonhaber.com/resimler/galeri/3e965c628c3c118d7e6a0aa4b4643c50.jpg"
 
-
+            console.log("Success")
         }
     } catch (error) {
 

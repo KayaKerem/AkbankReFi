@@ -75,7 +75,9 @@ export default {
     };
   },
   async created() {
-    await listenToProductList()
+    this.products1 = await listenToProductList()
+    this.isProductLoading = false;
+    
   },
   computed: {
     
